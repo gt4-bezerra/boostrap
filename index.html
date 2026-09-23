@@ -9,6 +9,46 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Bootstrap Class - Geração Tech 4.0</title>
     <style>
+        html,
+        body {
+            margin: 0;
+            height: 80%;
+        }
+
+        .carousel-fullscreen {
+            height: 80dvh;
+        }
+
+        .carousel-fullscreen .carousel-item {
+            height: 80%;
+        }
+
+        .carousel-fullscreen img {
+            width: 80%;
+            height: 80%;
+        }
+
+        .carousel-fullscreen {
+            height: 90dvh;
+        }
+
+        .carousel-fullscreen .carousel-item {
+            height: 100%;
+        }
+
+        .carousel-fullscreen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        #themeToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 15px;
+            z-index: 1000;
+        }
     </style>
 </head>
 
@@ -53,34 +93,76 @@
     </nav>
 
     <div class="container-fluid">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/firmbee-bar-621033_1920.jpg" class="d-block w-100" alt="...">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fullscreen" data-bs-ride="carousel">
+    
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="assets/img/firmbee-bar-621033_1920.jpg" class="d-block w-100 h-100" alt="">
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/img/pexels-code-1839406_1920.jpg" class="d-block w-100" alt="...">
+    
+                <div class="carousel-item h-100">
+                    <img src="assets/img/pexels-code-1839406_1920.jpg" class="d-block w-100 h-100" alt="">
                 </div>
-                <div class="carousel-item">
-                    <img src="assets/img/ronaldcandonga-job-5382501_1920.jpg" class="d-block w-100" alt="...">
+    
+                <div class="carousel-item h-100">
+                    <img src="assets/img/ronaldcandonga-job-5382501_1920.jpg" class="d-block w-100 h-100" alt="">
                 </div>
             </div>
+    
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                 data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="carousel-control-prev-icon"></span>
             </button>
+    
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
                 data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="carousel-control-next-icon"></span>
             </button>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    <button id="themeToggle" class="btn btn-outline-secondary ms-2" type="button">
+
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+
+        // Verifica se existe um tema salvo
+        let theme = localStorage.getItem("theme");
+
+        // Se não existir, usa o tema do sistema
+        if (!theme) {
+            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+        }
+
+        function applyTheme() {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+
+            if (theme === "dark") {
+                themeToggle.textContent = "🌙";
+            } else {
+                themeToggle.textContent = "☀️";
+            }
+        }
+
+        // Aplica o tema ao abrir a página
+        applyTheme();
+
+        // Troca o tema ao clicar
+        themeToggle.addEventListener("click", () => {
+            theme = theme === "light" ? "dark" : "light";
+
+            localStorage.setItem("theme", theme);
+
+            applyTheme();
+        });
+    </script>
+
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
