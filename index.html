@@ -49,6 +49,10 @@
             right: 15px;
             z-index: 1000;
         }
+
+        .container {
+            margin: 20px auto;
+        }
     </style>
 </head>
 
@@ -192,46 +196,76 @@
         Clique e veja a mágica!
     </button>
 
-    <!-- Modal -->
-    <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">
-                        Demonstração
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    olá! Eu sou um modal, e estou funcionando perfeitamente!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Fechar
-                    </button>
-                    <button type="button" class="btn btn-primary">Salvar alterações</button>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            Demonstração
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        olá! Eu sou um modal, e estou funcionando perfeitamente!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Fechar
+                        </button>
+                        <button type="button" class="btn btn-primary">Salvar alterações</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="mt-5">
-        <h2>Funcionando</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, tenetur facere enim itaque aut optio alias
+            aperiam suscipit iste quod incidunt similique aliquam quis numquam. Facilis, molestiae dolores. Aliquam,
+            quibusdam.</p>
     </div>
 
     <button id="themeToggle" class="btn btn-outline-secondary ms-2" type="button">
+    </button>
 
-    <nav aria-label="...">
-        <ul class="pagination">
-            <li class="page-item"><a href="#" class="page-link">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active">
-                <a class="page-link" href="#" aria-current="page">2</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient’s username" aria-label="Recipient’s username"
+            aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">@example.com</span>
+    </div>
+
+    <div class="mb-3">
+        <label for="basic-url" class="form-label">Your vanity URL</label>
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+        </div>
+        <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+        <span class="input-group-text">.00</span>
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-text">With textarea</span>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
 
     <script>
         const themeToggle = document.getElementById("themeToggle");
